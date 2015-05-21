@@ -1,0 +1,48 @@
+<idea-plugin version="2">
+  <id>one.alex.vars.inserter</id>
+  <name>Vars Inserter</name>
+  <version>0.2</version>
+  <vendor email="alex@alex.one" url="http://www.alex.one">AlexOne</vendor>
+
+  <description><![CDATA[
+      Inserting vars, built via 'var <name>' to 'return' section
+    ]]></description>
+
+  <change-notes><![CDATA[
+      Do not add vars, that before module.exports<br>
+      Add duplicates checking<br>
+      If we have var only like "var aaa;" - insert aaa<br>
+      Do not add commented strings to return section
+    ]]>
+  </change-notes>
+
+  <!-- please see http://confluence.jetbrains.com/display/IDEADEV/Build+Number+Ranges for description -->
+  <idea-version since-build="131"/>
+
+  <!-- please see http://confluence.jetbrains.com/display/IDEADEV/Plugin+Compatibility+with+IntelliJ+Platform+Products
+       on how to target different products -->
+  <!-- uncomment to enable plugin in all products
+  <depends>com.intellij.modules.lang</depends>
+  -->
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+  </extensions>
+
+  <application-components>
+    <!-- Add your application components here -->
+  </application-components>
+
+  <project-components>
+    <!-- Add your project components here -->
+  </project-components>
+
+  <actions>
+    <!-- Add your actions here -->
+      <action id="one.alex.vars.inserter" class="VarsInserter" text="Vars Inserter"
+              description="Inserting vars built via &#39;var &lt;var_name&gt;&#39; to &#39;return&#39; section">
+          <add-to-group group-id="EditMenu" anchor="last"/>
+      </action>
+  </actions>
+
+</idea-plugin>
